@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  nginx:
+    contaner_name: nginx
+    depends_on:
+      - client
+      - backend
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - 80:80
+  client:
+    container_name: client
+    image: jasoniv/hidtcophospitalweb:latest
+  backend:
+    container_name: backend
+    image: jasoniv/hidtcophospitalapi:latest
+    command: bash -c "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+    ports: 
+      - 8000:8000
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/HIDT
+      - SECRET_KEY=secret
+      - ALGORITHM=HS256
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: postgres:13-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=HIDT
+volumes:
+  postgres_data:
