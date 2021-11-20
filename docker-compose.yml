@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   nginx:
-    contaner_name: nginx
+    container_name: nginx
     depends_on:
       - client
       - backend
