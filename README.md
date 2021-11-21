@@ -40,7 +40,7 @@ docker-compose up -d
 
 ## Configuration
 
-The react front end can be accessed at "http://127.0.0.1" or "localhost".
+The react front end can be accessed at "http://localhost" or "http://127.0.0.1".
 
 The api can be accessed at "http://localhost:8000".
 
@@ -48,6 +48,6 @@ The database can be accessed at "http://localhost:5432".
 
 If you wish to change any configuration, you can change them inside [docker-compose.yml](./docker-compose.yml) file.
 
-**Make sure the ports 80, 8000 and 5432 are not used by another service. 
+**Make sure the ports 80, 8000 and 5432 are not used by another service.**
 
 **PS: Don't change api url and port because react can't access the api variable at run time.**
