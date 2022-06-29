@@ -1,0 +1,5 @@
+# Backup
+docker exec -i db /bin/bash -c "PG_PASSWORD=postgres pg_dump --username postgres HIDT" > <destination_folder>\dump.sql
+
+# Restore
+docker exec -i db /bin/bash -c "PG_PASSWORD=postgres psql --username postgres HIDT" < <destination_folder>\dump.sql
