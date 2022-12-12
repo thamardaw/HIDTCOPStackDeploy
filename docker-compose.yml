@@ -13,10 +13,10 @@ services:
       - 80:80
   client:
     container_name: client
-    image: hidtcophospitalweb:latest
+    image: jasoniv/hidtcophospitalweblocal:latest
   backend:
     container_name: backend
-    image: hidtcophospitalapi:latest
+    image: jasoniv/hidtcophospitalapi:latest
     command: bash -c "alembic upgrade head && uvicorn main:app --forwarded-allow-ips '*' --proxy-headers --host 0.0.0.0 --port 8000"
     ports: 
       - 8000:8000
