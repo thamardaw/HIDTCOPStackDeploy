@@ -1,6 +1,22 @@
 # HIDTCOP local deploy setup with docker-compose
 
-HIDTCOP full stack installation and setup with docker-compose.
+HIDTCOP full stack installation and setup with docker-compose. For gitpod configuration, [navigate](## Gitpod configuration) towards the bottom of this file.
+
+## Gitpod Configuration
+
+Open a new workspace with this repository.
+
+```
+$ docker-compose up -d
+```
+
+Open the prompt browser tab for port 5433.
+
+Login with default credential, "thuhtetaung.d2@gmail.com" & "qwerty12345".
+
+Add new server with hostname "db", username "postgres" & passsword "postgres".
+
+You can configure your own custom credentials on environment settings in docker-compose.yml
 
 ## Requirements
 
@@ -11,7 +27,6 @@ Install [docker-compose](https://docs.docker.com/compose/install/).
 ## Installation
 
 Git clone HIDTCOPHospitalApi repository:
-
 ```bash
 git clone https://github.com/thamardaw/HIDTCOPStackDeploy.git
 ```
