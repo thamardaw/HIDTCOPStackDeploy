@@ -61,7 +61,7 @@ docker-compose.yml
 ```
 client:
     container_name: client
-    image: hidtcophospitalweblocal:latest (from jasoniv/hidtcophospitalweblocal:latest)
+    image: hidtcophospitalweb:latest (from jasoniv/hidtcophospitalweblocal:latest)
 ```
 
 ```
