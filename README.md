@@ -1,6 +1,14 @@
 # HIDTCOP local deploy setup with docker-compose
 
-HIDTCOP full stack installation and setup with docker-compose. For gitpod configuration, [navigate](## Gitpod configuration) towards the bottom of this file.
+HIDTCOP full stack installation and setup with docker-compose. 
+
+For cloud configuration, navigate towards [Cloud Configuration section](## Cloud Configuration).
+
+For gitpod configuration, navigate to [Gitpod Configuration](## Gitpod configuration).
+
+## Cloud Configuration
+
+Read [DEPLOY.md](./DEPLOY.md).
 
 ## Gitpod Configuration
 
@@ -12,7 +20,7 @@ $ docker-compose up -d
 
 Open the prompt browser tab for port 5433.
 
-Login with default credential, "thuhtetaung.d2@gmail.com" & "qwerty12345".
+Login with default credential (check configuration on docker-compose.yml).
 
 Add new server with hostname "db", username "postgres" & passsword "postgres".
 

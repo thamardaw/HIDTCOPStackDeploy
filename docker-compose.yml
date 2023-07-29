@@ -1,19 +1,11 @@
 version: "3.8"
 
 services:
-  nginx:
-    container_name: nginx
-    depends_on:
-      - client
-      - backend
-    build:
-      dockerfile: Dockerfile
-      context: ./nginx
-    ports:
-      - 80:80
   client:
     container_name: client
     image: jasoniv/hidtcophospitalweblocal:latest
+    ports:
+      - 3000:3000
   backend:
     container_name: backend
     image: jasoniv/hidtcophospitalapi:latest
@@ -44,7 +36,7 @@ services:
     ports:
       - 5433:80
     environment:
-      - PGADMIN_DEFAULT_EMAIL=thuhtetaung.d2@gmail.com
-      - PGADMIN_DEFAULT_PASSWORD=qwerty12345
+      - PGADMIN_DEFAULT_EMAIL=admin
+      - PGADMIN_DEFAULT_PASSWORD=3TQ*iqpUk8^$z5
 volumes:
   postgres_data:
